@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Azad Traders</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:darkred;color:white">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Azad Traders", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Dashboard", "Index", "Admin")</li>
+                    <li >@Html.ActionLink("Suppliers", "IndexSupplier", "Admin")</li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Products
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item">@Html.ActionLink("Market", "IndexCustomer", "Admin")</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item">@Html.ActionLink("Export", "IndexCustomerSupplier", "Admin")</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item">@Html.ActionLink("Stock", "IndexStock", "Admin")</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item">@Html.ActionLink("All Products", "IndexProduct", "Admin")</a>
+
+                        </div>
+                    </li>
+                    <li na>@Html.ActionLink("Payment", "IndexPayment", "Admin")</li>
+
+                    <li>@Html.ActionLink("Logout", "Logout", "Admin")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content" >
+        @RenderBody()
+        <hr />
+        <footer >
+            <p>&copy; @DateTime.Now.Year - Azad Traders</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

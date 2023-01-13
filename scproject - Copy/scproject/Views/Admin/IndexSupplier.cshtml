@@ -1,0 +1,75 @@
+﻿@model IEnumerable<scproject.Supplier>
+
+@{
+    ViewBag.Title = "IndexSupplier";
+    Layout = "~/Views/Shared/_LayoutforAdmin.cshtml";
+}
+
+<h2>Suppliers</h2>
+
+<p>
+    @using (Html.BeginForm("IndexSupplier", "Admin", FormMethod.Get))
+    {
+        <b>Search by:  </b>@Html.RadioButton("searchBy", "CompanyName", true)<text>Company Name</text>
+        @Html.RadioButton("searchBy", "ContactName")<text>Contact Name</text><br /><br />
+        @Html.TextBox("search")<input type="submit" value="Search" style="background-color:darkred;color:white"/>
+    }
+</p>
+
+<p>
+    @Html.ActionLink("Create New", "CreateSupplier")
+</p>
+
+<table class="table" style="border-color:darkred;border:solid;">
+    <tr style="background-color:darkred;color:white">
+        <th>
+            <h5><b>Supplier ID</b></h5>
+        </th>
+        <th>
+            <h5><b>Contact Name</b></h5>
+        </th>
+        <th>
+            <h5><b>Company Name</b></h5>
+        </th>
+        <th>
+            <h5><b>Address</b></h5>
+        </th>
+        <th>
+            <h5><b>Email</b></h5>
+        </th>
+        <th>
+            <h5><b>Phone Number</b></h5>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Addresss)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditSupplier", new { id = item.SupplierID }) |
+                @Html.ActionLink("Details", "DetailsSupplier", new { id = item.SupplierID }) |
+                @Html.ActionLink("Delete", "DeleteSupplier", new { id = item.SupplierID })
+            </td>
+        </tr>
+    }
+
+</table>

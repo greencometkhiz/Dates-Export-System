@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="scprojeModel123.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="CustomerAddress" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PhoneNum" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Emaill" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PaymentID" Type="int" />
+  </EntityType>
+  <EntityType Name="CustomerSupplier">
+    <Key>
+      <PropertyRef Name="CSID" />
+    </Key>
+    <Property Name="CSID" Type="int" Nullable="false" />
+    <Property Name="CSName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="CSAddress" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PhoneNo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Emailad" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PaymentID" Type="int" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="int" Nullable="false" />
+    <Property Name="PaymentAmount" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PaymentDate" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="CostPerKg" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Category" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="SupplierID" Type="int" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="StockID" />
+    </Key>
+    <Property Name="StockID" Type="int" Nullable="false" />
+    <Property Name="Availabilityy" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="int" Nullable="false" />
+    <Property Name="ContactName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Addresss" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Customer__Paymen__571DF1D5">
+    <End Role="Payment" Type="Self.Payment" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment">
+        <PropertyRef Name="PaymentID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="PaymentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CustomerS__Payme__5441852A">
+    <End Role="Payment" Type="Self.Payment" Multiplicity="0..1" />
+    <End Role="CustomerSupplier" Type="Self.CustomerSupplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment">
+        <PropertyRef Name="PaymentID" />
+      </Principal>
+      <Dependent Role="CustomerSupplier">
+        <PropertyRef Name="PaymentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Payment__Product__5165187F">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__Supplie__4BAC3F29">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Stock__ProductID__4E88ABD4">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="scprojeModel123StoreContainer">
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerSupplier" EntityType="Self.CustomerSupplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stock" EntityType="Self.Stock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Customer__Paymen__571DF1D5" Association="Self.FK__Customer__Paymen__571DF1D5">
+      <End Role="Payment" EntitySet="Payment" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CustomerS__Payme__5441852A" Association="Self.FK__CustomerS__Payme__5441852A">
+      <End Role="Payment" EntitySet="Payment" />
+      <End Role="CustomerSupplier" EntitySet="CustomerSupplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Payment__Product__5165187F" Association="Self.FK__Payment__Product__5165187F">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__Supplie__4BAC3F29" Association="Self.FK__Product__Supplie__4BAC3F29">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Stock__ProductID__4E88ABD4" Association="Self.FK__Stock__ProductID__4E88ABD4">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Stock" EntitySet="Stock" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

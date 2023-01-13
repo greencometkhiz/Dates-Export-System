@@ -1,0 +1,35 @@
+﻿@model scproject.Stock
+
+@{
+    ViewBag.Title = "DetailsStock";
+    Layout = "~/Views/Shared/_LayoutforAdmin.cshtml";
+}
+
+<h2>Stock Details</h2>
+
+<div>
+    <h4>Stock</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Availabilityy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Availabilityy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.ProductName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditStock", new { id = Model.StockID }) |
+    @Html.ActionLink("Back to Stock", "IndexStock")
+</p>

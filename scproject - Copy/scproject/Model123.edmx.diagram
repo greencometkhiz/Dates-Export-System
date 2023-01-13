@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="38638f61079a4ca890930b6d5f73392c" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="scprojeModel123.Customer" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="scprojeModel123.CustomerSupplier" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="scprojeModel123.Payment" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="scprojeModel123.Product" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="scprojeModel123.Stock" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="scprojeModel123.Supplier" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="scprojeModel123.FK__Customer__Paymen__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="scprojeModel123.FK__CustomerS__Payme__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="scprojeModel123.FK__Payment__Product__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="scprojeModel123.FK__Product__Supplie__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="scprojeModel123.FK__Stock__ProductID__4E88ABD4" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

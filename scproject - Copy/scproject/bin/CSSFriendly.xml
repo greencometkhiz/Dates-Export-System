@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CSSFriendly</name>
+    </assembly>
+    <members>
+        <member name="M:CSSFriendly.LoginStatusAdapter.RegisterScripts">
+            ///////////////////////////////////////////////////////////////////////////////
+            PRIVATE        
+        </member>
+        <member name="M:CSSFriendly.CompositeDataBoundControlAdapter.OnInit(System.EventArgs)">
+            ///////////////////////////////////////////////////////////////////////////////
+            METHODS
+        </member>
+        <member name="T:CSSFriendly.Helpers">
+            <summary>
+            Provides static helper methods to CSSFriendly controls. Singleton instance.
+            </summary>
+        </member>
+        <member name="M:CSSFriendly.Helpers.#ctor">
+            <summary>
+            Private constructor forces singleton.
+            </summary>
+        </member>
+        <member name="M:CSSFriendly.Helpers.GetPrivateField(System.Object,System.String)">
+            <summary>
+            Gets the value of a non-public field of an object instance. Must have Reflection permission.
+            </summary>
+            <param name="container">The object whose field value will be returned.</param>
+            <param name="fieldName">The name of the data field to get.</param>
+            <remarks>Code initially provided by LonelyRollingStar.</remarks>
+        </member>
+        <member name="M:CSSFriendly.DataListAdapter.OnInit(System.EventArgs)">
+            ///////////////////////////////////////////////////////////////////////////////
+            PROTECTED        
+        </member>
+        <member name="M:CSSFriendly.DataListAdapter.RegisterScripts">
+            ///////////////////////////////////////////////////////////////////////////////
+            PRIVATE        
+        </member>
+        <member name="M:CSSFriendly.DataListAdapter.GetRowClass(System.Web.UI.WebControls.DataList,System.Web.UI.WebControls.DataListItem)">
+            <summary>
+            Gets the row's CSS class.
+            </summary>
+            <param name="DataList">The data list.</param>
+            <param name="Item">The current item.</param>
+            <returns>The CSS class.</returns>
+            <remarks>
+            Added 10/31/2007 by SelArom based on similar code for GridView control.
+            </remarks>
+        </member>
+        <member name="M:CSSFriendly.DetailsViewAdapter.BuildItem(System.Web.UI.HtmlTextWriter)">
+            <remarks>
+            Applied CodePlex patch #337/338 provided by tonyhild to apply the <c>AspNet-DetailsView-RowCommand</c> class to the
+            list item row for command buttons.
+            </remarks>
+        </member>
+        <member name="M:CSSFriendly.ChangePasswordAdapter.OnInit(System.EventArgs)">
+            ///////////////////////////////////////////////////////////////////////////////
+            PROTECTED        
+        </member>
+        <member name="M:CSSFriendly.ChangePasswordAdapter.RegisterScripts">
+            ///////////////////////////////////////////////////////////////////////////////
+            PRIVATE        
+        </member>
+        <member name="T:CSSFriendly.TreeViewAdapter">
+            <summary>
+            <c>TreeViewAdapter</c> implements a control adapter for the
+            <see cref="T:TreeView"/> ASP.NET web-control.
+            </summary>
+        </member>
+        <member name="M:CSSFriendly.TreeViewAdapter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TreeViewAdapter"/> class.
+            </summary>
+        </member>
+        <member name="M:CSSFriendly.TreeViewAdapter.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            When implemented by a class, processes postback data for an ASP.NET server control.
+            </summary>
+            <param name="postDataKey">The key identifier for the control.</param>
+            <param name="postCollection">The collection of all incoming name values.</param>
+            <returns>
+            true if the server control's state changes as a result of the postback; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:CSSFriendly.TreeViewAdapter.RaisePostDataChangedEvent">
+            <summary>
+            When implemented by a class, signals the server control to notify
+            the ASP.NET application that the state of the control has changed.
+            </summary>
+        </member>
+        <member name="M:CSSFriendly.TreeViewAdapter.RaisePostBackEvent(System.String)">
+            <summary>
+            When implemented by a class, enables a server control to process
+            an event raised when a form is posted to the server.
+            </summary>
+            <param name="eventArgument">A <see cref="T:System.String" /> that
+            represents an optional event argument to be passed to the event
+            handler.</param>
+        </member>
+        <member name="M:CSSFriendly.TreeViewAdapter.SaveAdapterViewState">
+            <summary>
+            Saves view state information for the control adapter.
+            </summary>
+            <returns>
+            An <see cref="T:System.Object"></see> that contains the adapter view state information as a <see cref="T:System.Web.UI.StateBag"></see>.
+            </returns>
+        </member>
+        <member name="M:CSSFriendly.TreeViewAdapter.LoadAdapterViewState(System.Object)">
+            <summary>
+            Loads adapter view state information that was saved by <see cref="M:System.Web.UI.Adapters.ControlAdapter.SaveAdapterViewState"></see> during a previous request to the page where the control associated with this control adapter resides.
+            </summary>
+            <param name="state">An <see cref="T:System.Object"></see> that contains the adapter view state information as a <see cref="T:System.Web.UI.StateBag"></see>.</param>
+        </member>
+        <member name="M:CSSFriendly.TreeViewAdapter.OnInit(System.EventArgs)">
+            <summary>
+            Overrides the <see cref="M:System.Web.UI.Control.OnInit(System.EventArgs)"></see> method for the associated control.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"></see> that contains the event data.</param>
+        </member>
+        <member name="M:CSSFriendly.TreeViewAdapter.OnLoad(System.EventArgs)">
+            <summary>
+            Overrides the <see cref="M:System.Web.UI.Control.OnLoad(System.EventArgs)"></see> method for the associated control.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"></see> that contains the event data.</param>
+        </member>
+        <member name="M:CSSFriendly.TreeViewAdapter.RenderBeginTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Creates the beginning tag for the Web control in the markup that is transmitted to the target browser.
+            </summary>
+            <param name="writer">The <see cref="T:System.Web.UI.HtmlTextWriter"></see> containing methods to render the target-specific output.</param>
+        </member>
+        <member name="M:CSSFriendly.TreeViewAdapter.RenderEndTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Creates the ending tag for the Web control in the markup that is transmitted to the target browser.
+            </summary>
+            <param name="writer">The <see cref="T:System.Web.UI.HtmlTextWriter"></see> containing methods to render the target-specific output.</param>
+        </member>
+        <member name="M:CSSFriendly.TreeViewAdapter.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Generates the target-specific inner markup for the Web control to which the control adapter is attached.
+            </summary>
+            <param name="writer">The <see cref="T:System.Web.UI.HtmlTextWriter"></see> containing methods to render the target-specific output.</param>
+        </member>
+        <member name="M:CSSFriendly.TreeViewAdapter.ExpandToDepth(System.Web.UI.WebControls.TreeNodeCollection,System.Int32)">
+            <summary>
+            Expands all tree elements with a depth less than the specified depth.
+            </summary>
+            <param name="nodes">The nodes.</param>
+            <param name="expandDepth">The expand depth.</param>
+        </member>
+        <member name="M:CSSFriendly.LoginAdapter.OnInit(System.EventArgs)">
+            ///////////////////////////////////////////////////////////////////////////////
+            PROTECTED        
+        </member>
+        <member name="M:CSSFriendly.LoginAdapter.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <remarks>
+            Applied CodePlex patch #301 provided by Piquet to support the VisibleWhenLoggedIn property.
+            </remarks>
+        </member>
+        <member name="M:CSSFriendly.LoginAdapter.RegisterScripts">
+            ///////////////////////////////////////////////////////////////////////////////
+            PRIVATE        
+        </member>
+        <member name="M:CSSFriendly.PasswordRecoveryAdapter.OnInit(System.EventArgs)">
+            ///////////////////////////////////////////////////////////////////////////////
+            PROTECTED        
+        </member>
+        <member name="M:CSSFriendly.PasswordRecoveryAdapter.RegisterScripts">
+            ///////////////////////////////////////////////////////////////////////////////
+            PRIVATE        
+        </member>
+        <member name="T:CSSFriendly.CheckBoxListAdapter">
+            <summary>
+            Overrides the default table layout of the <see cref="T:System.Web.UI.WebControls.CheckBoxList"/>
+            control, to a XHTML unordered list layout (structural markup).
+            </summary>
+        </member>
+        <member name="T:CSSFriendly.RadioButtonListAdapter">
+            <summary>
+            Overrides the default table layout of the <see cref="T:System.Web.UI.WebControls.RadioButtonList"/>
+            control, to a XHTML unordered list layout (structural markup).
+            </summary>
+        </member>
+        <member name="M:CSSFriendly.GridViewAdapter.OnInit(System.EventArgs)">
+            ///////////////////////////////////////////////////////////////////////////////
+            PROTECTED        
+        </member>
+        <member name="M:CSSFriendly.GridViewAdapter.RegisterScripts">
+            ///////////////////////////////////////////////////////////////////////////////
+            PRIVATE        
+        </member>
+        <member name="M:CSSFriendly.GridViewAdapter.SetHeaderCellSortingClass(System.Web.UI.WebControls.GridView,System.Web.UI.WebControls.DataControlField,System.Web.UI.WebControls.TableItemStyle)">
+            <summary>
+            Sets the header cell's CSS class based on its sortability.
+            </summary>
+            <param name="gridView">The grid view.</param>
+            <param name="field">The column.</param>
+            <param name="itemStyle">The header cell's style.</param>
+            <remarks>
+            Added by Damian Edwards 2/Oct/2008 to support styling of sortable and sorted columns via CSS
+            </remarks>
+        </member>
+        <member name="M:CSSFriendly.GridViewAdapter.GetRowClass(System.Web.UI.WebControls.GridView,System.Web.UI.WebControls.GridViewRow)">
+            <summary>
+            Gets the row's CSS class.
+            </summary>
+            <param name="gridView">The grid view.</param>
+            <param name="row">The row.</param>
+            <returns>The CSS class.</returns>
+            <remarks>
+            Modified 10/31/2007 by SelArom to create CSS classes for all different row types and states.
+            </remarks>
+        </member>
+        <member name="M:CSSFriendly.GridViewAdapter.WritePagerSection(System.Web.UI.HtmlTextWriter,System.Web.UI.WebControls.PagerPosition)">
+            <remarks>
+            Patch provided by Wizzard to support PagerTemplate (CodePlex issue #3368).
+            </remarks>
+        </member>
+        <member name="M:CSSFriendly.CreateUserWizardAdapter.OnInit(System.EventArgs)">
+            ///////////////////////////////////////////////////////////////////////////////
+            PROTECTED        
+        </member>
+        <member name="M:CSSFriendly.CreateUserWizardAdapter.RegisterScripts">
+            ///////////////////////////////////////////////////////////////////////////////
+            PRIVATE        
+        </member>
+    </members>
+</doc>

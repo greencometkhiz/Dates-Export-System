@@ -1,0 +1,43 @@
+﻿@model scproject.Payment
+
+@{
+    ViewBag.Title = "DetailsPayment";
+    Layout = "~/Views/Shared/_LayoutforAdmin.cshtml";
+}
+
+<h2>Payment Details</h2>
+
+<div>
+    <h4>Payment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.ProductName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditPayment", new { id = Model.PaymentID }) |
+    @Html.ActionLink("Back to Payment", "IndexPayment")
+</p>

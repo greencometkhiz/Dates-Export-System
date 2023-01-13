@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="scprojeModel22StoreContainer" CdmEntityContainer="scprojeEntities22">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="scprojeModel22.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+          <ScalarProperty Name="Emaill" ColumnName="Emaill" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerSuppliers">
+      <EntityTypeMapping TypeName="scprojeModel22.CustomerSupplier">
+        <MappingFragment StoreEntitySet="CustomerSupplier">
+          <ScalarProperty Name="CSID" ColumnName="CSID" />
+          <ScalarProperty Name="CSName" ColumnName="CSName" />
+          <ScalarProperty Name="CSAddress" ColumnName="CSAddress" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Emailad" ColumnName="Emailad" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="scprojeModel22.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="scprojeModel22.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="CostPerKg" ColumnName="CostPerKg" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stocks">
+      <EntityTypeMapping TypeName="scprojeModel22.Stock">
+        <MappingFragment StoreEntitySet="Stock">
+          <ScalarProperty Name="StockID" ColumnName="StockID" />
+          <ScalarProperty Name="Availabilityy" ColumnName="Availabilityy" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="scprojeModel22.Supplier">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Addresss" ColumnName="Addresss" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="scprojeModel22.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

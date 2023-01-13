@@ -1,0 +1,54 @@
+﻿@model IEnumerable<scproject.Payment>
+
+@{
+    ViewBag.Title = "IndexPayment";
+    Layout = "~/Views/Shared/_LayoutforAdmin.cshtml";
+}
+
+<h2>Payments</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreatePayment")
+</p>
+<table class="table" style="border-color:darkred;border:solid;">
+    <tr style="background-color:darkred;color:white">
+
+        <th>
+            <h5><b>Payment ID</b></h5>
+        </th>
+        <th>
+            <h5><b>Payment Amount</b></h5>
+        </th>
+        <th>
+            <h5><b>Date of Payment</b></h5>
+        </th>
+        <th>
+            <h5><b>Product ID</b></h5>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditPayment", new { id = item.PaymentID }) |
+                @Html.ActionLink("Details", "DetailsPayment", new { id = item.PaymentID }) |
+                @Html.ActionLink("Delete", "DeletePayment", new { id = item.PaymentID })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,115 @@
+﻿@model IEnumerable<scproject.CustomerSupplier>
+
+@{
+    ViewBag.Title = "IndexCustomerSupplier";
+    Layout = "~/Views/Shared/_LayoutforAdmin.cshtml";
+}
+
+<h2>Export Customer Suppliers</h2>
+<div>
+
+  
+    <div class="container" style="float:left;width: 400px; height: 300px; margin: 15px; background-color:transparent; color: white;">
+        <img style="width: 400px; height: 300px;float:left;margin-left:0px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn9hz2xgTsElxJIvtaunuCiuof03i8xeZPtA&usqp=CAU" />
+
+        <br />
+        <br />
+        <br />
+        <br /><center>
+
+        </center>
+    </div>
+
+    <div class="container" style="float: right; width: 400px; height: 300px; margin: 15px; background-color: transparent; color: white;">
+        <img style="width: 400px; height: 300px;float:right;margin-right:0px;" src="data:image/jpeg;base64,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" />
+
+        <br />
+        <br />
+        <br />
+        <br /><center>
+            <h2>Total Products:</h2>
+
+        </center>
+    </div>
+
+</div>
+
+<div>
+    <p>
+        <br /><br />
+        <br />
+        <br /><br />
+        <br />
+        <br /><br />
+        <br />
+        <br /><br />
+        <br />
+        <br />
+        <br /><br />
+        <br />
+        <br />
+
+        @using (Html.BeginForm("IndexCustomerSupplier", "Admin", FormMethod.Get))
+        {
+            <b>Search by:  </b>@Html.RadioButton("searchBy", "CSName", true)<text>Costumer Supplier Name</text>
+            <br /><br />
+            @Html.TextBox("search")<input type="submit" value="Search" style="background-color:darkred;color:white"/>
+        }
+    </p>
+    <p>
+        @Html.ActionLink("Create New", "CreateCustomerSupplier")
+    </p>
+    <table class="table" style="border-color:darkred;border:solid;">
+        <tr style="background-color:darkred;color:white">
+            <th>
+                <h5><b>Customer Supplier ID</b></h5>
+            </th>
+            <th>
+                <h5><b>Name</b></h5>
+            </th>
+            <th>
+                <h5><b>Address</b></h5>
+            </th>
+            <th>
+                <h5><b>Phone Number</b></h5>
+            </th>
+            <th>
+                <h5><b>Email</b></h5>
+            </th>
+            <th>
+                <h5><b>Payment ID</b></h5>
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CSID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CSName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CSAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Emailad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaymentID)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditCustomerSupplier", new { id = item.CSID }) |
+                    @Html.ActionLink("Details", "DetailsCustomerSupplier", new { id = item.CSID }) |
+                    @Html.ActionLink("Delete", "DeleteCustomerSupplier", new { id = item.CSID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

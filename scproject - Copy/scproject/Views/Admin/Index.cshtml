@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutforAdmin.cshtml";
+}
+
+@Html.Raw(TempData["LoginSuccessMessage"])
+<center>
+    <h2>Dashboard</h2>
+    <div>
+
+        <h3>Welcome @Session["Username"]</h3>
+</center>
+<div>
+
+    <div class="container" style="float:left;width: 400px; height: 300px; margin: 15px; background-color: darkred; color: white;">
+        <br />
+        <br />
+        <br />
+        <br /><center>
+            <h2>Total Suppliers:</h2>
+            <h1>@ViewBag.Count</h1>
+        </center>
+    </div>
+
+    <div class="container" style="float: right; width: 400px; height: 300px; margin: 15px; background-color: white; color: darkred;border:solid">
+        <br />
+        <br />
+        <br />
+        <br /><center>
+            <h2>Total Products:</h2>
+            <h1>@ViewBag.Counter</h1>
+        </center>
+    </div>
+
+
+
+</div>
+<div>
+
+    <div class="container" style="float:left;width: 400px; height: 300px; margin: 15px; background-color: white; color: darkred;border:solid">
+        <br />
+        <br />
+        <br />
+        <br /><center>
+            <h2>Total Customers:</h2>
+            <h1>@ViewBag.Counting</h1>
+        </center>
+    </div>
+
+    <div class="container" style="float:right;width: 400px; height: 300px; margin: 15px; background-color: darkred; color: white;">
+        <br />
+        <br />
+        <br />
+        <br /><center>
+            <h2>Total Customer Suppliers:</h2>
+            <h1>@ViewBag.Counted</h1>
+        </center>
+    </div>
+
+
+
+</div>
+    </div>
+
+<div class="container">
+    <p>
+        <br />
+        <br />
+    </p>
+
+</div>
+
+
+
+
+
+
+

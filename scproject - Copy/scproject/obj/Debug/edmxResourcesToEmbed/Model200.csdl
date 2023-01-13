@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="scprojeModel200" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CustomerAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNum" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Emaill" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PaymentID" Type="Int32" />
+    <NavigationProperty Name="Payment" Relationship="Self.FK__Customer__Paymen__571DF1D5" FromRole="Customer" ToRole="Payment" />
+  </EntityType>
+  <EntityType Name="CustomerSupplier">
+    <Key>
+      <PropertyRef Name="CSID" />
+    </Key>
+    <Property Name="CSID" Type="Int32" Nullable="false" />
+    <Property Name="CSName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CSAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Emailad" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PaymentID" Type="Int32" />
+    <NavigationProperty Name="Payment" Relationship="Self.FK__CustomerS__Payme__5441852A" FromRole="CustomerSupplier" ToRole="Payment" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="Int32" Nullable="false" />
+    <Property Name="PaymentAmount" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PaymentDate" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK__Customer__Paymen__571DF1D5" FromRole="Payment" ToRole="Customer" />
+    <NavigationProperty Name="CustomerSuppliers" Relationship="Self.FK__CustomerS__Payme__5441852A" FromRole="Payment" ToRole="CustomerSupplier" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Payment__Product__5165187F" FromRole="Payment" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CostPerKg" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Category" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SupplierID" Type="Int32" />
+    <NavigationProperty Name="Payments" Relationship="Self.FK__Payment__Product__5165187F" FromRole="Product" ToRole="Payment" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK__Product__Supplie__4BAC3F29" FromRole="Product" ToRole="Supplier" />
+    <NavigationProperty Name="Stocks" Relationship="Self.FK__Stock__ProductID__4E88ABD4" FromRole="Product" ToRole="Stock" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="StockID" />
+    </Key>
+    <Property Name="StockID" Type="Int32" Nullable="false" />
+    <Property Name="Availabilityy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Stock__ProductID__4E88ABD4" FromRole="Stock" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="Int32" Nullable="false" />
+    <Property Name="ContactName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Addresss" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Product__Supplie__4BAC3F29" FromRole="Supplier" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK__Customer__Paymen__571DF1D5">
+    <End Role="Payment" Type="Self.Payment" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment">
+        <PropertyRef Name="PaymentID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="PaymentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CustomerS__Payme__5441852A">
+    <End Role="Payment" Type="Self.Payment" Multiplicity="0..1" />
+    <End Role="CustomerSupplier" Type="Self.CustomerSupplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment">
+        <PropertyRef Name="PaymentID" />
+      </Principal>
+      <Dependent Role="CustomerSupplier">
+        <PropertyRef Name="PaymentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Payment__Product__5165187F">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__Supplie__4BAC3F29">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Stock__ProductID__4E88ABD4">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="scprojeEntities200" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="CustomerSuppliers" EntityType="Self.CustomerSupplier" />
+    <EntitySet Name="Payments" EntityType="Self.Payment" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Stocks" EntityType="Self.Stock" />
+    <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+    <AssociationSet Name="FK__Customer__Paymen__571DF1D5" Association="Self.FK__Customer__Paymen__571DF1D5">
+      <End Role="Payment" EntitySet="Payments" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CustomerS__Payme__5441852A" Association="Self.FK__CustomerS__Payme__5441852A">
+      <End Role="Payment" EntitySet="Payments" />
+      <End Role="CustomerSupplier" EntitySet="CustomerSuppliers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Payment__Product__5165187F" Association="Self.FK__Payment__Product__5165187F">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Payment" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__Supplie__4BAC3F29" Association="Self.FK__Product__Supplie__4BAC3F29">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Stock__ProductID__4E88ABD4" Association="Self.FK__Stock__ProductID__4E88ABD4">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Stock" EntitySet="Stocks" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

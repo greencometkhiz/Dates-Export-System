@@ -1,0 +1,41 @@
+﻿@model scproject.Stock
+
+@{
+    ViewBag.Title = "DeleteStock";
+    Layout = "~/Views/Shared/_LayoutforAdmin.cshtml";
+}
+
+<h2>Delete Stock</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Stock</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Availabilityy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Availabilityy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.ProductName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to Stock", "IndexStock")
+        </div>
+    }
+</div>

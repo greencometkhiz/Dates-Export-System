@@ -1,0 +1,51 @@
+﻿@model scproject.Product
+
+@{
+    ViewBag.Title = "DetailsProduct";
+    Layout = "~/Views/Shared/_LayoutforAdmin.cshtml";
+}
+
+<h2>Product Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostPerKg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostPerKg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier.ContactName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier.ContactName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditProduct", new { id = Model.ProductID }) |
+    @Html.ActionLink("Back to Product", "IndexProduct")
+</p>
